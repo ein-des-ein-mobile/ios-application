@@ -1,6 +1,6 @@
 # README
 
-Main Temaplate Application
+Main Template Application
 
 ## Core
 
