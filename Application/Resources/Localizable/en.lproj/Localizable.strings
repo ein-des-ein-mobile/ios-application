@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Application
+
+  Created by Anton Bal` on 14.11.2022.
+  
+*/
+
+// MARK: - Common
+
+"common_next" = "Next";
+"common_skip" = "Skip";
+"common_open" = "Open";
+"common_completed" = "Completed";
+"common_search" = "Search";
+"common_try_again" = "Try again";
+"common_id" = "ID";
+"common_enabled" = "Enabled";
+"common_disabled" = "Disabled";
+"common_share" = "Share";
+"common_copy" = "Copy";
+"common_discard" = "Discard";
+"common_accept" = "Accept";
+"common_select_option" = "Select option";
+"common_comment" = "Comment";
+"common_optional" = "Optional";
+"common_add_images" = "Add images";
+"common_other" = "other";
+"common_start" = "Start";
+"common_start" = "Stop";
+"common_profile" = "Profile";
+"common_contact" = "Contact";
+"common_settings" = "Settings";
+
+// MARK: - Auth
+
+"auth_username" = "Username";
+"auth_email" = "Email";
+"auth_password" = "Password";
+"auth_login" = "Login";
+"auth_logout" = "Logout";
