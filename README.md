@@ -17,7 +17,7 @@ Install R.swift by running: `brew install rswift`. The Homebrew formula is maint
 ### Github 
 https://github.com/pointfreeco/swift-composable-architecture
 
-### Official documentation:
+### Official documentation
 https://pointfreeco.github.io/swift-composable-architecture/main/documentation/composablearchitecture
 
 [Performance !!!]
@@ -30,3 +30,11 @@ https://github.com/pointfreeco/swift-composable-architecture
 
 ### Official documentation
 https://www.mongodb.com/docs/realm/sdk/swift/ 
+
+# Clean Arhitecure 
+
+### Official documentation
+https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+
+### Informative & adapted to Mobile
+https://habr.com/ru/company/mobileup/blog/335382/
