@@ -14,4 +14,19 @@ Install R.swift by running: `brew install rswift`. The Homebrew formula is maint
 
 ## swift-composable-architecture
 
+### Github 
 https://github.com/pointfreeco/swift-composable-architecture
+
+### Official documentation:
+https://pointfreeco.github.io/swift-composable-architecture/main/documentation/composablearchitecture
+
+[Performance !!!]
+https://pointfreeco.github.io/swift-composable-architecture/main/documentation/composablearchitecture/performance
+
+## Realm
+
+### Github
+https://github.com/pointfreeco/swift-composable-architecture
+
+### Official documentation
+https://www.mongodb.com/docs/realm/sdk/swift/ 
