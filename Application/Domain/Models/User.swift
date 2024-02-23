@@ -8,25 +8,20 @@ import Foundation
 import Core
 
 struct User: AuthUser, Identifiable, Equatable {
-    
-    struct ID: Identity {
-        let value: String
-    }
-    
-    let id: ID
+    let id: String_ID<Self>
     let firstName: String
     let lastName: String
-    let dateOfBirth: Date
+    let dateOfBirth: Date?
 }
 
 // MARK: - DatabaseRepresentable
 
 extension User: DatabaseRepresentable {
     
-    init(_ object: RMUser, context: Void) throws {
-        self.init(id: .init(value: object.id),
-                  firstName: object.firstName,
-                  lastName: object.lastName,
+    init(_ object: UserCD) throws {
+        self.init(id: .init(value: object.id ?? ""),
+                  firstName: object.firstName ?? "",
+                  lastName: object.lastName ?? "",
                   dateOfBirth: object.dateOfBirth
         )
     }

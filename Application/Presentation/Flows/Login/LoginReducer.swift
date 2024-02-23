@@ -8,30 +8,36 @@
 import ComposableArchitecture
 import Core
 
-struct LoginReducer: ReducerProtocol {
+@Reducer
+struct LoginReducer {
    
+    @ObservableState
     struct State: Equatable {
         var user: User?
-        var alert: AlertState<Action>?
+        
         var email = "app@core.com"
         var password = "123"
         var isFormValid = false
         var isLoginInPropgress = false
         
         init() {}
+        
+        @Presents var alert: AlertState<Action.Alert>?
     }
     
     enum Action: Equatable {
+        enum Alert: Equatable {}
+        
         case signIn
         case signInResponse(TaskResult<User>)
-        case alertDismissed
         case emailChanged(String)
         case passwordChanged(String)
+        case alert(PresentationAction<Alert>)
     }
     
     @Dependency(\.sessionUseCase) var authUseCase
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case let .emailChanged(email):
@@ -46,10 +52,10 @@ struct LoginReducer: ReducerProtocol {
                 
             case .signIn:
                 state.isLoginInPropgress = true
-                return .task { [email = state.email, password = state.password] in
-                    await .signInResponse(
+                return .run { [email = state.email, password = state.password] send in
+                    await send(.signInResponse(
                         TaskResult { try await self.authUseCase.signIn(with: email, password: password).user }
-                    )
+                    ))
                 }
                 
             case let .signInResponse(.success(user)):
@@ -62,7 +68,7 @@ struct LoginReducer: ReducerProtocol {
                 state.alert = AlertState(title: TextState(error.localizedDescription))
                 return .none
                 
-            case .alertDismissed:
+            case .alert(.dismiss):
                 state.alert = nil
                 return .none
             }

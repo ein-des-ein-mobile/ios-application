@@ -8,7 +8,8 @@
 import Foundation
 import ComposableArchitecture
 
-struct RootReducer: ReducerProtocol {
+@Reducer
+struct RootReducer {
     enum State: Equatable {
         case login(LoginReducer.State)
         case home(TabReducer.State)
@@ -23,7 +24,7 @@ struct RootReducer: ReducerProtocol {
         case splash(SplashReducer.Action)
     }
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some Reducer<State, Action> {
         Reduce { state, action in
 
             switch action {
@@ -31,7 +32,7 @@ struct RootReducer: ReducerProtocol {
             case .login(.signInResponse(.success)):
                 state = .home(.init())
                 
-            case .home(.home(.profile(.logoutResponse(.success)))):
+            case .home(.home(.profile(.presented(.logoutResponse(.success))))):
                 state = .login(.init())
                 
             case .splash(.authorized(let user)):

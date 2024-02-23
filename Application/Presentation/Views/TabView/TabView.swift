@@ -30,44 +30,57 @@ struct TabView: View {
     }
     
     var body: some View {
-        SwiftUI.TabView(selection: viewStore.binding(send: { TabReducer.Action.selectedTab($0.currentTab)
-        })) {
-            IfLetStore(self.store.scope(state: \.home, action: TabReducer.Action.home),
-                       then: HomeView.init(store: ))
-            .tabItem {
-                TabItem(tab: .home)
+        WithViewStore(store, observe: \.currentTab) { viewStore in
+            SwiftUI.TabView(selection:
+                    viewStore.binding(send: TabReducer.Action.selectedTab)
+            ){
+                Group {
+                    NavigationView {
+                        HomeView(store: store.scope(state: \.home,
+                                                    action: \.home))
+                    }                    .tag(TabReducer.Tab.home)
+                    .tabItem {
+                        TabItem(tab: .home)
+                    }
+                    
+                    NavigationView {
+                        InfoView(store: store.scope(state: \.info,
+                                                    action: \.info))
+                    }
+                    .tag(TabReducer.Tab.info)
+                    .tabItem {
+                        TabItem(tab: .info)
+                    }
+  
+                    NavigationView {
+                        InfoView(store: store.scope(state: \.consumption,
+                                                      action: \.consumption))
+                    }
+                    .tag(TabReducer.Tab.consumption)
+                    .tabItem {
+                        TabItem(tab: .consumption)
+                    }
+                    
+                    NavigationView {
+                        InfoView(store: store.scope(state: \.contact,
+                                                       action: \.contact))
+                    }
+                    .tag(TabReducer.Tab.contact)
+                    .tabItem {
+                        TabItem(tab: .contact)
+                    }
+                    
+                    NavigationView {
+                        InfoView(store: store.scope(state: \.settings,
+                                                       action: \.settings))
+                    }
+                    .tag(TabReducer.Tab.settings)
+                    .tabItem {
+                        TabItem(tab: .settings)
+                    }
+                }
             }
-            .tag(TabReducer.Tab.home)
-
-            IfLetStore(self.store.scope(state: \.info, action: TabReducer.Action.info),
-                       then: InfoView.init(store:))
-            .tabItem {
-                TabItem(tab: .info)
-            }
-            .tag(TabReducer.Tab.info)
-            
-            IfLetStore(self.store.scope(state: \.consumption, action: TabReducer.Action.consumption),
-                       then: InfoView.init(store:))
-            .tabItem {
-                TabItem(tab: .consumption)
-            }
-            .tag(TabReducer.Tab.consumption)
-        
-            IfLetStore(self.store.scope(state: \.contact, action: TabReducer.Action.contact),
-                       then: InfoView.init(store:))
-            .tabItem {
-                TabItem(tab: .contact)
-            }
-            .tag(TabReducer.Tab.contact)
-            
-            IfLetStore(self.store.scope(state: \.settings, action: TabReducer.Action.settings),
-                       then: InfoView.init(store:))
-            .tabItem {
-                TabItem(tab: .settings)
-            }
-            .tag(TabReducer.Tab.settings)
         }
-        .accentColor(.black)
     }
 }
 
@@ -97,10 +110,9 @@ struct TabItem: View {
 struct TabView_Previews: PreviewProvider {
     static var previews: some View {
         TabView(
-            store: Store(
-                initialState: TabReducer.State(),
-                reducer: TabReducer()
-            )
+            store: Store(initialState: TabReducer.State()) {
+                TabReducer()
+            }
         )
     }
 }

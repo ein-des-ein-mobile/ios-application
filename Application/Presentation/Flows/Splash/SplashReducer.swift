@@ -8,7 +8,8 @@
 import ComposableArchitecture
 import Core
 
-struct SplashReducer: ReducerProtocol {
+@Reducer
+struct SplashReducer {
    
     struct State: Equatable {
         var inProgress: Bool = true
@@ -21,13 +22,13 @@ struct SplashReducer: ReducerProtocol {
     
     @Dependency(\.sessionUseCase) var sessionUseCase
     
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
                 
             case .onApear:
-                return .task { .authorized(user: sessionUseCase.get()?.user)  }
-                
+                return .send(.authorized(user: sessionUseCase.get()?.user))
+
             case .authorized:
                 state.inProgress = false
                 return .none

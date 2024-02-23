@@ -18,7 +18,7 @@ final class SessionSerivce {
         case api(APIError)
 
         init(_ api: APIError) {
-            if case let .statusCode(code) = api, code == 401 {
+            if case let .statusCode(code, _, _) = api, code == 401 {
                 self = .usernamePasswordWrong
             } else {
                 self = .api(api)
@@ -53,7 +53,6 @@ extension SessionSerivce: SessionUseCase {
             .networking
             .data(for: API.Auth.signOut)
         
-        try await context.database.erase()
         try delete()
     }
 

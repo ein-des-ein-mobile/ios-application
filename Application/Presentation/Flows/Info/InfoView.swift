@@ -19,10 +19,9 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     static var previews: some View {
         InfoView(
-            store: Store(
-                initialState: InfoReducer.State(),
-                reducer: InfoReducer()
-            )
+            store: Store(initialState: InfoReducer.State()) {
+                InfoReducer()
+            }
         )
     }
 }

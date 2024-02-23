@@ -8,18 +8,19 @@
 import Foundation
 import ComposableArchitecture
 
-struct TabReducer: ReducerProtocol {
+@Reducer
+struct TabReducer {
     
     enum Tab { case home, info, consumption, contact, settings}
     
+    @ObservableState
     struct State: Equatable {
         
-        // TODO: Needs research how combine reducer correctly
-        var home: HomeReducer.State? = .init()
-        var info: InfoReducer.State? = .init()
-        var consumption: InfoReducer.State? = .init()
-        var contact: InfoReducer.State? = .init()
-        var settings: InfoReducer.State? = .init()
+        var home = HomeReducer.State()
+        var info = InfoReducer.State()
+        var consumption = InfoReducer.State()
+        var contact = InfoReducer.State()
+        var settings = InfoReducer.State()
         
         var currentTab: Tab = .home
     }
@@ -33,7 +34,22 @@ struct TabReducer: ReducerProtocol {
         case selectedTab(Tab)
     }
     
-    public var body: some ReducerProtocol<State, Action> {
+    var body: some Reducer<State, Action> {
+        Scope(state: \.home, action: /Action.home) {
+            HomeReducer()
+        }
+        Scope(state: \.info, action: /Action.info) {
+            InfoReducer()
+        }
+        Scope(state: \.consumption, action: /Action.consumption) {
+            InfoReducer()
+        }
+        Scope(state: \.contact, action: /Action.contact) {
+            InfoReducer()
+        }
+        Scope(state: \.settings, action: /Action.settings) {
+            InfoReducer()
+        }
         Reduce { state, action in
             
             switch action {
@@ -45,9 +61,6 @@ struct TabReducer: ReducerProtocol {
             default:
                 return .none
             }
-        }
-        .ifLet(\.home, action: /Action.home) {
-            HomeReducer()
         }
     }
 }

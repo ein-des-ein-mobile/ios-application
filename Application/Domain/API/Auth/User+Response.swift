@@ -7,6 +7,7 @@
 
 import Foundation
 import Core
+import CoreData
 
 extension User {
     struct Response: Decodable, Identifiable {
@@ -21,10 +22,10 @@ extension User {
 
 extension User.Response: Persistable {
 
-    typealias ManagedObject = RMUser
-    typealias Context = Void
+    typealias ManagedObject = UserCD
+    typealias Context = NSManagedObjectContext
 
-    func update(_ object: RMUser, context: Void) throws {
+    func update(_ object: UserCD, context: NSManagedObjectContext) throws {
         object.dateOfBirth = dateOfBirth.value
         object.firstName = firstName
         object.lastName = lastName

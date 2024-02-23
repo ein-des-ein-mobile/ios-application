@@ -82,17 +82,16 @@ struct LoginView: View {
         .padding()
         .navigationTitle(R.string.localizable.auth_login())
         .loaderSheet(isPresented: .constant(viewStore.isLoginInPropgress))
-        .alert(store.scope(state: \.alert), dismiss: .alertDismissed)
+        .alert(store: store.scope(state: \.$alert, action: \.alert))
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView(
-            store: Store(
-                initialState: LoginReducer.State(),
-                reducer: LoginReducer()
-            )
+            store: Store(initialState: LoginReducer.State()) {
+                LoginReducer()
+            }
         )
     }
 }

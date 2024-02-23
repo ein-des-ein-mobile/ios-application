@@ -10,10 +10,9 @@ import ComposableArchitecture
 
 @main
 struct ApplicationApp: App {
-    let store = Store(
-      initialState: RootReducer.State(),
-      reducer: RootReducer()._printChanges()
-    )
+    let store = Store(initialState: RootReducer.State()) {
+        RootReducer()._printChanges()
+    }
     
     var body: some Scene {
         WindowGroup {

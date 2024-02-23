@@ -8,7 +8,8 @@
 import ComposableArchitecture
 import Core
 
-struct InfoReducer: ReducerProtocol {
+@Reducer
+struct InfoReducer {
    
     struct State: Equatable {
         var alert: AlertState<Action>?
@@ -18,7 +19,7 @@ struct InfoReducer: ReducerProtocol {
         case alertDismissed
     }
 
-    public var body: some ReducerProtocol<State, Action> {
+    public var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case .alertDismissed:

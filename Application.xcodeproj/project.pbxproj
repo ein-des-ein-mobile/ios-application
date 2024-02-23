@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6034AC2F292A749200023444 /* SplashReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034AC2D292A749200023444 /* SplashReducer.swift */; };
 		6034AC30292A749200023444 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034AC2E292A749200023444 /* SplashView.swift */; };
-		606B1C29292B655300132AAC /* RealmDatabase+Persistable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606B1C28292B655300132AAC /* RealmDatabase+Persistable.swift */; };
+		605C04142B85DF7400BD7029 /* core-data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 605C04122B85DF7400BD7029 /* core-data.xcdatamodeld */; };
 		6075EC0A2922205A008BED3A /* ApplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC092922205A008BED3A /* ApplicationApp.swift */; };
 		6075EC0E2922205D008BED3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6075EC0D2922205D008BED3A /* Assets.xcassets */; };
 		6075EC112922205D008BED3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6075EC102922205D008BED3A /* Preview Assets.xcassets */; };
@@ -17,11 +17,7 @@
 		6075EC252922205D008BED3A /* ApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC242922205D008BED3A /* ApplicationUITests.swift */; };
 		6075EC272922205D008BED3A /* ApplicationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC262922205D008BED3A /* ApplicationUITestsLaunchTests.swift */; };
 		6075EC35292220D7008BED3A /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 6075EC34292220D7008BED3A /* Core */; };
-		6075EC38292220EE008BED3A /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 6075EC37292220EE008BED3A /* Rswift */; };
-		6075EC3B29222117008BED3A /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 6075EC3A29222117008BED3A /* ComposableArchitecture */; };
-		6075EC3D29222117008BED3A /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = 6075EC3C29222117008BED3A /* Dependencies */; };
 		6075EC4729222328008BED3A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6075EC4929222328008BED3A /* Localizable.strings */; };
-		6075EC4D292223E8008BED3A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC4C292223E8008BED3A /* R.generated.swift */; };
 		6075EC512922241A008BED3A /* DateCoderFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC4F2922241A008BED3A /* DateCoderFormatter.swift */; };
 		6075EC522922241A008BED3A /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC502922241A008BED3A /* DateFormatter.swift */; };
 		6075EC5629222429008BED3A /* DXSystemDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6075EC5429222429008BED3A /* DXSystemDimension.swift */; };
@@ -46,9 +42,7 @@
 		60C7F913292A3FDC00ED9971 /* SessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F912292A3FDC00ED9971 /* SessionUseCase.swift */; };
 		60C7F915292A3FE600ED9971 /* SessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F914292A3FE600ED9971 /* SessionService.swift */; };
 		60C7F917292A3FEE00ED9971 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F916292A3FEE00ED9971 /* User.swift */; };
-		60C7F91E292A47A300ED9971 /* RealmDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F91A292A47A300ED9971 /* RealmDatabase.swift */; };
-		60C7F91F292A47A300ED9971 /* RMUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F91C292A47A300ED9971 /* RMUser.swift */; };
-		60C7F922292A484700ED9971 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 60C7F921292A484700ED9971 /* RealmSwift */; };
+		60C7F91F292A47A300ED9971 /* UserCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F91C292A47A300ED9971 /* UserCD.swift */; };
 		60C7F927292A489B00ED9971 /* API+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F924292A489B00ED9971 /* API+Auth.swift */; };
 		60C7F928292A489B00ED9971 /* SignInParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F925292A489B00ED9971 /* SignInParams.swift */; };
 		60C7F929292A489B00ED9971 /* User+Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F926292A489B00ED9971 /* User+Response.swift */; };
@@ -63,6 +57,8 @@
 		60C7F94A292A5FE400ED9971 /* TabReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F948292A5FE400ED9971 /* TabReducer.swift */; };
 		60C7F94E292A60DA00ED9971 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F94C292A60DA00ED9971 /* InfoView.swift */; };
 		60C7F94F292A60DA00ED9971 /* InfoReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7F94D292A60DA00ED9971 /* InfoReducer.swift */; };
+		60C868CF2B887C20000AF26C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 60C868CE2B887C20000AF26C /* ComposableArchitecture */; };
+		60C868D42B888894000AF26C /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 60C868D32B888894000AF26C /* RswiftLibrary */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +82,7 @@
 		6012D20C292B688F00212876 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6034AC2D292A749200023444 /* SplashReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReducer.swift; sourceTree = "<group>"; };
 		6034AC2E292A749200023444 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		606B1C28292B655300132AAC /* RealmDatabase+Persistable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmDatabase+Persistable.swift"; sourceTree = "<group>"; };
+		605C04132B85DF7400BD7029 /* core-data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "core-data.xcdatamodel"; sourceTree = "<group>"; };
 		6075EC062922205A008BED3A /* Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Application.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6075EC092922205A008BED3A /* ApplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationApp.swift; sourceTree = "<group>"; };
 		6075EC0D2922205D008BED3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,8 +118,7 @@
 		60C7F912292A3FDC00ED9971 /* SessionUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionUseCase.swift; sourceTree = "<group>"; };
 		60C7F914292A3FE600ED9971 /* SessionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionService.swift; sourceTree = "<group>"; };
 		60C7F916292A3FEE00ED9971 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		60C7F91A292A47A300ED9971 /* RealmDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDatabase.swift; sourceTree = "<group>"; };
-		60C7F91C292A47A300ED9971 /* RMUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMUser.swift; sourceTree = "<group>"; };
+		60C7F91C292A47A300ED9971 /* UserCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCD.swift; sourceTree = "<group>"; };
 		60C7F924292A489B00ED9971 /* API+Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "API+Auth.swift"; sourceTree = "<group>"; };
 		60C7F925292A489B00ED9971 /* SignInParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInParams.swift; sourceTree = "<group>"; };
 		60C7F926292A489B00ED9971 /* User+Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+Response.swift"; sourceTree = "<group>"; };
@@ -146,10 +141,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6075EC35292220D7008BED3A /* Core in Frameworks */,
-				6075EC38292220EE008BED3A /* Rswift in Frameworks */,
-				6075EC3B29222117008BED3A /* ComposableArchitecture in Frameworks */,
-				60C7F922292A484700ED9971 /* RealmSwift in Frameworks */,
-				6075EC3D29222117008BED3A /* Dependencies in Frameworks */,
+				60C868CF2B887C20000AF26C /* ComposableArchitecture in Frameworks */,
+				60C868D42B888894000AF26C /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +180,7 @@
 				6075EC192922205D008BED3A /* ApplicationTests */,
 				6075EC232922205D008BED3A /* ApplicationUITests */,
 				6075EC072922205A008BED3A /* Products */,
+				60C868D22B888894000AF26C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -474,8 +468,7 @@
 		60C7F919292A47A300ED9971 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				60C7F91A292A47A300ED9971 /* RealmDatabase.swift */,
-				606B1C28292B655300132AAC /* RealmDatabase+Persistable.swift */,
+				605C04122B85DF7400BD7029 /* core-data.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -483,7 +476,7 @@
 		60C7F91B292A47A300ED9971 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				60C7F91C292A47A300ED9971 /* RMUser.swift */,
+				60C7F91C292A47A300ED9971 /* UserCD.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -535,6 +528,13 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		60C868D22B888894000AF26C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -542,7 +542,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6075EC2A2922205D008BED3A /* Build configuration list for PBXNativeTarget "Application" */;
 			buildPhases = (
-				6075EC3E292221A5008BED3A /* R.swift  */,
 				6075EC022922205A008BED3A /* Sources */,
 				6075EC032922205A008BED3A /* Frameworks */,
 				6075EC042922205A008BED3A /* Resources */,
@@ -550,14 +549,13 @@
 			buildRules = (
 			);
 			dependencies = (
+				60C868D62B8888B2000AF26C /* PBXTargetDependency */,
 			);
 			name = Application;
 			packageProductDependencies = (
 				6075EC34292220D7008BED3A /* Core */,
-				6075EC37292220EE008BED3A /* Rswift */,
-				6075EC3A29222117008BED3A /* ComposableArchitecture */,
-				6075EC3C29222117008BED3A /* Dependencies */,
-				60C7F921292A484700ED9971 /* RealmSwift */,
+				60C868CE2B887C20000AF26C /* ComposableArchitecture */,
+				60C868D32B888894000AF26C /* RswiftLibrary */,
 			);
 			productName = Application;
 			productReference = 6075EC062922205A008BED3A /* Application.app */;
@@ -607,7 +605,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
-				LastUpgradeCheck = 1400;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					6075EC052922205A008BED3A = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -633,9 +631,8 @@
 			mainGroup = 6075EBFD2922205A008BED3A;
 			packageReferences = (
 				6075EC33292220D7008BED3A /* XCRemoteSwiftPackageReference "ios-core-module" */,
-				6075EC36292220EE008BED3A /* XCRemoteSwiftPackageReference "R.swift" */,
-				6075EC3929222117008BED3A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				60C7F920292A484700ED9971 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				60C868CD2B887C20000AF26C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				60C868D12B888881000AF26C /* XCRemoteSwiftPackageReference "R.swift" */,
 			);
 			productRefGroup = 6075EC072922205A008BED3A /* Products */;
 			projectDirPath = "";
@@ -675,29 +672,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		6075EC3E292221A5008BED3A /* R.swift  */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "R.swift ";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				$SRCROOT/R.generated.swift,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/rswift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		6075EC022922205A008BED3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -721,9 +695,8 @@
 				60C7F94A292A5FE400ED9971 /* TabReducer.swift in Sources */,
 				60C7F93D292A568200ED9971 /* AccessToken.swift in Sources */,
 				6075EC8129222AD6008BED3A /* AppEnvironment.swift in Sources */,
-				60C7F91F292A47A300ED9971 /* RMUser.swift in Sources */,
+				60C7F91F292A47A300ED9971 /* UserCD.swift in Sources */,
 				60C7F931292A4DFB00ED9971 /* View+Loader.swift in Sources */,
-				60C7F91E292A47A300ED9971 /* RealmDatabase.swift in Sources */,
 				6075EC9E29222EB5008BED3A /* StrokeButton.swift in Sources */,
 				60C7F943292A59BE00ED9971 /* SessionProvider.swift in Sources */,
 				6075EC0A2922205A008BED3A /* ApplicationApp.swift in Sources */,
@@ -731,7 +704,6 @@
 				6075EC9929222CEF008BED3A /* RootReducer.swift in Sources */,
 				6075EC512922241A008BED3A /* DateCoderFormatter.swift in Sources */,
 				6075EC8229222AD6008BED3A /* ServiceContext.swift in Sources */,
-				6075EC4D292223E8008BED3A /* R.generated.swift in Sources */,
 				60C7F941292A56CE00ED9971 /* AuthorizationPlugin.swift in Sources */,
 				6075EC9529222CEE008BED3A /* ProfileReducer.swift in Sources */,
 				6075EC9629222CEE008BED3A /* LoginView.swift in Sources */,
@@ -742,11 +714,11 @@
 				60C7F915292A3FE600ED9971 /* SessionService.swift in Sources */,
 				6075EC9429222CEE008BED3A /* ProfileView.swift in Sources */,
 				60C7F913292A3FDC00ED9971 /* SessionUseCase.swift in Sources */,
+				605C04142B85DF7400BD7029 /* core-data.xcdatamodeld in Sources */,
 				6075EC9B29222CEF008BED3A /* HomeReducer.swift in Sources */,
 				6075EC5D29222A91008BED3A /* RSwift + SwiftUI.swift in Sources */,
 				6034AC2F292A749200023444 /* SplashReducer.swift in Sources */,
 				60C7F945292A5A7300ED9971 /* MockSessionService.swift in Sources */,
-				606B1C29292B655300132AAC /* RealmDatabase+Persistable.swift in Sources */,
 				6075EC5729222429008BED3A /* Font+DX.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -780,6 +752,10 @@
 			isa = PBXTargetDependency;
 			target = 6075EC052922205A008BED3A /* Application */;
 			targetProxy = 6075EC212922205D008BED3A /* PBXContainerItemProxy */;
+		};
+		60C868D62B8888B2000AF26C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 60C868D52B8888B2000AF26C /* RswiftGenerateInternalResources */;
 		};
 /* End PBXTargetDependency section */
 
@@ -831,6 +807,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -891,6 +868,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1090,6 +1068,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1222,6 +1201,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1367,32 +1347,24 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ein-des-ein-mobile/ios-core-module";
 			requirement = {
-				branch = master;
+				branch = develop;
 				kind = branch;
 			};
 		};
-		6075EC36292220EE008BED3A /* XCRemoteSwiftPackageReference "R.swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		6075EC3929222117008BED3A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+		60C868CD2B887C20000AF26C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
 			};
 		};
-		60C7F920292A484700ED9971 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		60C868D12B888881000AF26C /* XCRemoteSwiftPackageReference "R.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
+			repositoryURL = "https://github.com/mac-cain13/R.swift.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1403,27 +1375,35 @@
 			package = 6075EC33292220D7008BED3A /* XCRemoteSwiftPackageReference "ios-core-module" */;
 			productName = Core;
 		};
-		6075EC37292220EE008BED3A /* Rswift */ = {
+		60C868CE2B887C20000AF26C /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6075EC36292220EE008BED3A /* XCRemoteSwiftPackageReference "R.swift" */;
-			productName = Rswift;
-		};
-		6075EC3A29222117008BED3A /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6075EC3929222117008BED3A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			package = 60C868CD2B887C20000AF26C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
 		};
-		6075EC3C29222117008BED3A /* Dependencies */ = {
+		60C868D32B888894000AF26C /* RswiftLibrary */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 6075EC3929222117008BED3A /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = Dependencies;
+			package = 60C868D12B888881000AF26C /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = RswiftLibrary;
 		};
-		60C7F921292A484700ED9971 /* RealmSwift */ = {
+		60C868D52B8888B2000AF26C /* RswiftGenerateInternalResources */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 60C7F920292A484700ED9971 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
+			package = 60C868D12B888881000AF26C /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = "plugin:RswiftGenerateInternalResources";
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		605C04122B85DF7400BD7029 /* core-data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				605C04132B85DF7400BD7029 /* core-data.xcdatamodel */,
+			);
+			currentVersion = 605C04132B85DF7400BD7029 /* core-data.xcdatamodel */;
+			path = "core-data.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6075EBFE2922205A008BED3A /* Project object */;
 }

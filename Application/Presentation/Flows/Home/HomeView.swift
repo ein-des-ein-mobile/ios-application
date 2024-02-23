@@ -13,13 +13,13 @@ struct HomeView: View {
     let store: StoreOf<HomeReducer>
     
     var body: some View {
-        WithViewStore(store) { viewStore in
+        WithViewStore(store, observe: { $0 }) { viewStore in
             VStack(spacing: .dx.padding12) {
                 Text("Main")
                
                 NavigationLink(
-                  destination: IfLetStore(store.scope(state: \.profile,
-                                                      action: HomeReducer.Action.profile)) {
+                  destination: IfLetStore(store.scope(state: \.$profile,
+                                                      action: \.profile)) {
                       ProfileView(store: $0)
                   },
                   isActive: viewStore.binding(

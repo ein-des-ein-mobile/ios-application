@@ -12,7 +12,7 @@ struct SplashView: View {
     let store: StoreOf<SplashReducer>
     
     var body: some View {
-        WithViewStore(store) { viewState in
+        WithViewStore(store, observe: { $0 }) { viewState in
             VStack {
                 EmptyView()
             }
@@ -27,10 +27,9 @@ struct SplashView: View {
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
         SplashView(
-            store: Store(
-                initialState: SplashReducer.State(),
-                reducer: SplashReducer()
-            )
+            store: Store(initialState: SplashReducer.State()) {
+                SplashReducer()
+            }
         )
     }
 }

@@ -7,19 +7,21 @@
 
 import ComposableArchitecture
 
-struct HomeReducer: ReducerProtocol {
+@Reducer
+struct HomeReducer {
     
+    @ObservableState
     struct State: Equatable {
-        var profile: ProfileReducer.State?
+        @Presents var profile: ProfileReducer.State?
     }
     
     enum Action: Equatable {
         case profileDismissed
         case profileButtonTapped
-        case profile(ProfileReducer.Action)
+        case profile(PresentationAction<ProfileReducer.Action>)
     }
     
-    var body: some ReducerProtocol<State, Action> {
+    var body: some Reducer<State, Action> {
         Reduce { state, action in
             switch action {
             case .profileButtonTapped:
@@ -32,7 +34,7 @@ struct HomeReducer: ReducerProtocol {
               return .none
             }
         }
-        .ifLet(\.profile, action: /HomeReducer.Action.profile) {
+        .ifLet(\.$profile, action: /HomeReducer.Action.profile) {
             ProfileReducer()
         }
     }

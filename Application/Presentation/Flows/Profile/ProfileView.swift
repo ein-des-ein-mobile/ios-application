@@ -13,7 +13,7 @@ struct ProfileView: View {
     let store: StoreOf<ProfileReducer>
     
     var body: some View {
-        WithViewStore(store) { viewStore in
+        WithViewStore(store, observe: { $0 }) { viewStore in
             
             HStack {
                 Spacer()
@@ -34,7 +34,7 @@ struct ProfileView: View {
             }
             .navigationTitle("Profile")
             .loaderSheet(isPresented: .constant(viewStore.isLogoutInPropgress))
-            .alert(store.scope(state: \.alert), dismiss: .alertDismissed)
+            .alert(store: store.scope(state: \.$alert, action: \.alert))
         }
     }
 }

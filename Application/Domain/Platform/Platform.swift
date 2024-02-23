@@ -18,7 +18,7 @@ final class Platform: UseCaseProvider {
         let networking = Network(environment: environment, plugins: [authPlugin])
         
         let context = ServiceContext(networking: networking,
-                                     database: RealmDatabase(),
+                                     database: CoreDataDatabase(persistentContainerName: "core-data"),
                                      secureStorage: KeychainStorage(),
                                      userStorage: DefaultsStorage())
         

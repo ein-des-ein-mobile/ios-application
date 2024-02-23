@@ -17,23 +17,26 @@ struct RootView: View {
     }
     
     public var body: some View {
-        SwitchStore(store) {
-            CaseLet(state: /RootReducer.State.splash, action: RootReducer.Action.splash) { store in
-                SplashView(store: store)
-            }
-            
-            CaseLet(state: /RootReducer.State.login, action: RootReducer.Action.login) { store in
-                NavigationView {
-                    LoginView(store: store)
+        SwitchStore(store) { state in
+            switch state {
+            case .splash:
+                CaseLet(/RootReducer.State.splash, action: RootReducer.Action.splash) { store in
+                    SplashView(store: store)
                 }
-                .navigationViewStyle(.stack)
-            }
-            
-            CaseLet(state: /RootReducer.State.home, action: RootReducer.Action.home) { store in
-                NavigationView {
-                    TabView(store: store)
+            case .login:
+                CaseLet(/RootReducer.State.login, action: RootReducer.Action.login) { store in
+                    NavigationView {
+                        LoginView(store: store)
+                    }
+                    .navigationViewStyle(.stack)
                 }
-                .navigationViewStyle(.stack)
+            case .home:
+                CaseLet(/RootReducer.State.home, action: RootReducer.Action.home) { store in
+                    NavigationView {
+                        TabView(store: store)
+                    }
+                    .navigationViewStyle(.stack)
+                }
             }
         }
     }
@@ -42,10 +45,9 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         RootView(
-            store: Store(
-                initialState: RootReducer.State(),
-                reducer: RootReducer()
-            )
+            store: Store(initialState: RootReducer.State()){
+                RootReducer()
+            }
         )
     }
 }
