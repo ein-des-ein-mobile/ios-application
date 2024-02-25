@@ -9,27 +9,25 @@ import SwiftUI
 import ComposableArchitecture
 
 struct SplashView: View {
-    let store: StoreOf<SplashReducer>
-    
-    var body: some View {
-        WithViewStore(store, observe: { $0 }) { viewState in
-            VStack {
-                EmptyView()
-            }
-            .loader(isPresented: .constant(viewState.state.inProgress))
-            .onAppear {
-                viewState.send(.onApear)
-            }
-        }
+  let store: StoreOf<SplashReducer>
+  
+  var body: some View {
+    WithViewStore(store, observe: { $0 }) { viewState in
+      VStack {
+        EmptyView()
+      }
+      .loader(isPresented: .constant(viewState.state.inProgress))
+      .onAppear {
+        viewState.send(.onApear)
+      }
     }
+  }
 }
 
-struct SplashView_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashView(
-            store: Store(initialState: SplashReducer.State()) {
-                SplashReducer()
-            }
-        )
+#Preview {
+  SplashView(
+    store: Store(initialState: SplashReducer.State()) {
+      SplashReducer()
     }
+  )
 }
