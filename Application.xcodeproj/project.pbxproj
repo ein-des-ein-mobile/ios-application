@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		601040152B8D099D0088525D /* View+Condition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601040142B8D099D0088525D /* View+Condition.swift */; };
 		6034AC2F292A749200023444 /* SplashReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034AC2D292A749200023444 /* SplashReducer.swift */; };
 		6034AC30292A749200023444 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6034AC2E292A749200023444 /* SplashView.swift */; };
 		605C04142B85DF7400BD7029 /* core-data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 605C04122B85DF7400BD7029 /* core-data.xcdatamodeld */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		601040142B8D099D0088525D /* View+Condition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Condition.swift"; sourceTree = "<group>"; };
 		6012D20C292B688F00212876 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6034AC2D292A749200023444 /* SplashReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashReducer.swift; sourceTree = "<group>"; };
 		6034AC2E292A749200023444 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 		60C7F938292A4E8B00ED9971 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				601040142B8D099D0088525D /* View+Condition.swift */,
 				60C7F92B292A4DFB00ED9971 /* View+Loader.swift */,
 			);
 			path = SwiftUI;
@@ -685,6 +688,7 @@
 				60C7F94F292A60DA00ED9971 /* InfoReducer.swift in Sources */,
 				6075EC8329222AD6008BED3A /* PlatformDependency.swift in Sources */,
 				6075EC5629222429008BED3A /* DXSystemDimension.swift in Sources */,
+				601040152B8D099D0088525D /* View+Condition.swift in Sources */,
 				60C7F917292A3FEE00ED9971 /* User.swift in Sources */,
 				60C7F929292A489B00ED9971 /* User+Response.swift in Sources */,
 				60C7F94E292A60DA00ED9971 /* InfoView.swift in Sources */,
