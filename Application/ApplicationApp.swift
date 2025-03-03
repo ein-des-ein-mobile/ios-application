@@ -2,21 +2,19 @@
 //  ApplicationApp.swift
 //  Application
 //
-//  Created by Anton Bal` on 14.11.2022.
+//  Created by Anton Bal’ on 02.03.2025.
 //
 
 import SwiftUI
-import ComposableArchitecture
+import SwiftUICore
+import Domain
 
 @main
 struct ApplicationApp: App {
-    let store = Store(initialState: RootReducer.State()) {
-        RootReducer()._printChanges()
-    }
-    
     var body: some Scene {
         WindowGroup {
-            RootView(store: store)
+            ApplicationView()
         }
     }
 }
+
